@@ -1,8 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
   images: {
-    domains: ['logo.clearbit.com', 'galaxy-prod.tlcdn.com'],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "galaxy-prod.tlcdn.com",
+      },
+    ],
+  },
+  experimental: {
+    optimizePackageImports: ["lucide-react", "framer-motion"],
   },
 };
 
